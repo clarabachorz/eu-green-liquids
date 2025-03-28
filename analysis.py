@@ -188,7 +188,7 @@ def plot_eu_liquids(industry_df, transport_df, target_year=2030):
 
     plt.tight_layout()
     fig.subplots_adjust(top=0.95)
-    fig.savefig(f'output/EU_green_liquids_{target_year}.png')
+    fig.savefig(f'EU_green_liquids_{target_year}.png')
 
     return df
 
@@ -200,4 +200,4 @@ df_2030 = plot_eu_liquids(EU_industry_df, EU_transport_df, target_year=2030)
 df_2035 = plot_eu_liquids(EU_industry_df, EU_transport_df, target_year=2035)
 full_df = pd.concat([df_2030.assign(year=2030), df_2035.assign(year=2035)], axis=0)
 
-full_df.to_csv('output/EU_green_liquids_RED3Targets.csv', index = False)
+full_df.to_csv('EU_green_liquids_RED3Targets.csv', index = False)
